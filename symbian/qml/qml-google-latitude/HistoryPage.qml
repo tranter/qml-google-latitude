@@ -52,7 +52,8 @@ Page {
             height: 40
             onClicked: {
                 console.log("Set as currentLocation...");
-                setCurrentLocation(historyLocationModel.get(listView.currentIndex).latitude,historyLocationModel.get(listView.currentIndex).longitude);
+                var item = historyLocationModel.get(listView.currentIndex)
+                appendCurrentLocation( item.latitude, item.longitude, item.timeLocation);
                 root.state = "stateLocation";
             }
         } //buttonPlus

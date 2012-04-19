@@ -60,6 +60,12 @@ Page {
         console.log("LocationPage. insertCurrentLocation(): lat="+lat+", lng="+lng);
         LatitudDataManager.insertCurrentLocation(lat,lng);
     }
+    function insertHistoryLocation(lat, lng, ms)
+    {
+        console.log("LocationPage. insertHistoryLocation(): lat="+lat+", lng="+lng+", ms="+ms);
+        LatitudDataManager.insertHistoryLocation(lat, lng, ms)
+    }
+
     function deleteLocationRequest(ms)
     {
         console.log("LocationPage. deleteLocation(): ms="+ms);

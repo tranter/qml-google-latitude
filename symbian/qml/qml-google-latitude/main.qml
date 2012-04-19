@@ -78,9 +78,10 @@ Window {
         pageLocation.gotoLocation(lat,lng);
     }
 
-    function setCurrentLocation(lat, lng)
+    function appendCurrentLocation(lat, lng, ms)
     {
-        pageLocation.insertCurrentLocation(lat,lng);
+        pageLocation.insertHistoryLocation(lat,lng,ms);
+        pageLocation.gotoLocation(lat,lng);
     }
 
     function deleteLocation(ms,index)
