@@ -78,9 +78,9 @@ Window {
         pageLocation.gotoLocation(lat,lng);
     }
 
-    function appendCurrentLocation(lat, lng, ms)
+    function appendCurrentLocation(lat, lng)
     {
-        pageLocation.insertHistoryLocation(lat,lng,ms);
+        pageLocation.insertHistoryLocation(lat,lng, settingsManager.getCurrentTimeMs());
         pageLocation.gotoLocation(lat,lng);
     }
 

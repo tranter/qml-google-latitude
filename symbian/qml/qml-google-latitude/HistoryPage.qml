@@ -53,7 +53,7 @@ Page {
             onClicked: {
                 console.log("Set as currentLocation...");
                 var item = historyLocationModel.get(listView.currentIndex)
-                appendCurrentLocation( item.latitude, item.longitude, item.timeLocation);
+                appendCurrentLocation( item.latitude, item.longitude );
                 root.state = "stateLocation";
             }
         } //buttonPlus
