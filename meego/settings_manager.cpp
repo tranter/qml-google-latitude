@@ -8,8 +8,11 @@ SettingsManager::SettingsManager(QObject *parent) :
 {
     m_apiKeyGeocoding = "YOUR_API_KEY_HERE";
 
+    m_organization = "ICS";
+    m_application  = "Latitude Client";
+
     QSettings::setPath(QSettings::NativeFormat, QSettings::UserScope, "qml/google_api_latitude_qml");
-    QSettings settings(QSettings::UserScope, "ICS", "Latitude Client");
+    QSettings settings(QSettings::UserScope, m_organization, m_application);
 
     m_strAccessToken = settings.value("access_token", "").toString();
     m_strRefreshToken = settings.value("refresh_token", "").toString();
@@ -52,7 +55,7 @@ QVariant SettingsManager::accessToken() const
 void SettingsManager::setAccessToken(const QVariant& token)
 {
     m_strAccessToken = token.toString();
-    QSettings settings(QSettings::UserScope, "ICS", "Latitude Client");
+    QSettings settings(QSettings::UserScope, m_organization, m_application);
     settings.setValue("access_token", m_strAccessToken);
 }
 
@@ -64,7 +67,7 @@ QVariant SettingsManager::refreshToken() const
 void SettingsManager::setRefreshToken(const QVariant& token)
 {
     m_strRefreshToken = token.toString();
-    QSettings settings(QSettings::UserScope, "ICS", "Latitude Client");
+    QSettings settings(QSettings::UserScope, m_organization, m_application);
     settings.setValue("refresh_token", m_strRefreshToken);
 }
 
@@ -77,7 +80,7 @@ void SettingsManager::setZoom(const QVariant& z)
 {
     qDebug() << "setZoom to " << z.toInt();
     m_nZoom = z.toInt();
-    QSettings settings(QSettings::UserScope, "ICS", "Latitude Client");
+    QSettings settings(QSettings::UserScope, m_organization, m_application);
     settings.setValue("zoom", m_nZoom);
 }
 
@@ -89,7 +92,7 @@ QVariant SettingsManager::mapTypeId() const
 void SettingsManager::setMapTypeId(const QVariant& type)
 {
     m_strMapTypeId = type.toString();
-    QSettings settings(QSettings::UserScope, "ICS", "Latitude Client");
+    QSettings settings(QSettings::UserScope, m_organization, m_application);
     settings.setValue("mapTypeId", m_strMapTypeId);
 }
 
@@ -157,7 +160,7 @@ QVariant SettingsManager::lat() const
 void SettingsManager::setLat(const QVariant& lat)
 {
     m_dLat = lat.toDouble();
-    QSettings settings(QSettings::UserScope, "ICS", "Latitude Client");
+    QSettings settings(QSettings::UserScope, m_organization, m_application);
     settings.setValue("lat", m_dLat);
     qDebug() << "setLat(): setValue=" << m_dLat;
 }
@@ -170,7 +173,7 @@ QVariant SettingsManager::lng() const
 void SettingsManager::setLng(const QVariant& lng)
 {
     m_dLng = lng.toDouble();
-    QSettings settings(QSettings::UserScope, "ICS", "Latitude Client");
+    QSettings settings(QSettings::UserScope, m_organization, m_application);
     settings.setValue("lng", m_dLng);
     qDebug() << "setLng(): setValue=" << m_dLng;
 }

@@ -79,6 +79,9 @@ private:
 
     bool checkZoom(int zoom);
     bool checkMapTypeId(QString type);
+
+    QString m_organization;
+    QString m_application;
 };
 
 QML_DECLARE_TYPE(SettingsManager)
