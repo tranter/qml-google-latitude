@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>qml/qml-google-latitude/images/toolbar-bottom.png</file>
+        <file>qml/qml-google-latitude/images/toolbar-top.png</file>
+    </qresource>
+</RCC>
