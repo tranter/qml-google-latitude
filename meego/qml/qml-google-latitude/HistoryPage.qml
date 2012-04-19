@@ -51,6 +51,8 @@ Page {
             width: 120
             height: 40
             onClicked: {
+                if( listView.currentIndex < 0 || historyLocationModel.count <= listView.currentIndex  )
+                    return
                 console.log("Set as currentLocation...");
                 var item = historyLocationModel.get(listView.currentIndex)
                 appendCurrentLocation( item.latitude, item.longitude );
@@ -65,6 +67,8 @@ Page {
             width: 150
             height: 40
             onClicked: {
+                if( listView.currentIndex < 0 || historyLocationModel.count <= listView.currentIndex  )
+                    return
                 console.log("Delete location... latitude="+historyLocationModel.get(listView.currentIndex).timeLocation);
                 deleteLocation(historyLocationModel.get(listView.currentIndex).timeLocation, listView.currentIndex);
             }
