@@ -2,7 +2,7 @@ import QtQuick 1.0
 import QtWebKit 1.0
 import "javascripts/google_oauth.js" as OAuth
 
-import com.nokia.symbian 1.1
+import com.nokia.symbian 1.0
 //import com.nokia.meego 1.0
 
 Rectangle {
@@ -57,17 +57,6 @@ Rectangle {
             font.bold: true;
             wrapMode: Text.WordWrap
         }
-//        MouseArea {
-//            anchors { left: parent.left; top: parent.top; bottom: parent.bottom; right: closeButton.left }
-//            onClicked: {
-//                console.log("Header clicked");
-//                textEditToHideKeyboard.closeSoftwareInputPanel();
-//            }
-//        }
-        TextEdit{
-            id: textEditToHideKeyboard
-            visible: false
-        }
 
         Button {
             id: closeButton
@@ -76,18 +65,7 @@ Rectangle {
             height: 40
             anchors { right:  parent.right; verticalCenter: parent.verticalCenter }
             onClicked: {
-                textEditToHideKeyboard.closeSoftwareInputPanel();
                 google_oauth.visible = false;
-            }
-        }
-        Button {
-            id: hideKeyboardButton
-            text: "Hide Keyboard"
-            width: 200
-            height: 40
-            anchors { left:  parent.left; verticalCenter: parent.verticalCenter }
-            onClicked: {
-                textEditToHideKeyboard.closeSoftwareInputPanel();
             }
         }
     }

@@ -2,6 +2,7 @@ var client_id = "YOUR_CLIENT_ID_HERE";
 var client_secret = "YOUR_CLIENT_SECRET_HERE";
 var redirect_uri = "YOUR_REDIRECT_URI_HERE";
 
+
 function urlChanged(url) {
     console.log("urlChanged!!!");
     var mUrl = url.toString();

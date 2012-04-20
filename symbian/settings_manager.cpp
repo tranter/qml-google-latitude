@@ -11,7 +11,7 @@ SettingsManager::SettingsManager(QObject *parent) :
     m_organization = "ICS";
     m_application  = "Latitude Client";
 
-    QSettings::setPath(QSettings::NativeFormat, QSettings::UserScope, "qml/google_api_latitude_qml");
+    QSettings::setPath(QSettings::NativeFormat, QSettings::UserScope, "qml/qml-google-latitude");
     QSettings settings(QSettings::UserScope, m_organization, m_application);
 
     m_strAccessToken = settings.value("access_token", "").toString();

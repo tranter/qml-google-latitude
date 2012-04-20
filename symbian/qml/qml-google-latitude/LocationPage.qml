@@ -3,7 +3,7 @@ import QtQuick 1.0
 import QtWebKit 1.0
 import "javascripts/latitude_data_manager.js" as LatitudDataManager
 import ICS 1.0
-import com.nokia.symbian 1.1
+import com.nokia.symbian 1.0
 //import com.nokia.meego 1.0
 
 
