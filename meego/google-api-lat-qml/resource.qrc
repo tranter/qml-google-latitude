@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>qml/googleapilatqml/images/toolbar-bottom.png</file>
+        <file>qml/googleapilatqml/images/toolbar-top.png</file>
+    </qresource>
+</RCC>
