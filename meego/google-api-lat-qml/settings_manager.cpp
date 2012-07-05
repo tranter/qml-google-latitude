@@ -10,9 +10,10 @@ SettingsManager::SettingsManager(QObject *parent) :
     QSettings::setPath(QSettings::NativeFormat, QSettings::UserScope, "qml/googleapilatqml");
     QSettings settings(QSettings::UserScope, "ICS", "Latitude Client");
 
+    m_apiKeyGeocoding = "YOUR_API_KEY_HERE";
+
     m_strAccessToken = settings.value("access_token", "").toString();
     m_strRefreshToken = settings.value("refresh_token", "").toString();
-    m_apiKeyGeocoding = "ABQIAAAA672lORl8GepdWKC0IpTyLBRwyA1oHr6mUau5K-dsEYfkoQ5xchQi9OlnyPRXXvt0X-CWsz8S660ZVg";
     m_strScope = "https://www.googleapis.com/auth/latitude.all.best"; //Access to Latitude service
     int num;
     num = settings.value("zoom", 8).toInt();
